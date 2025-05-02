@@ -1,0 +1,30 @@
+
+<!--<table border="3">
+    <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>address</td>
+        <td>image</td>
+        <td>status</td>
+    </tr>
+    <tr *ngFor="let i of listResidences">
+        <td>{{i.id}}</td>
+        <td>{{i.name }}</td>
+        <td>{{i.address | uppercase}}</td>
+        <!--<td><img src="{{i.image}}" alt="" height="100" width="100"></td>--
+        <td><img [src]="i.image" alt="" height="100" width="100"></td>
+        <td>{{i.status}}</td>
+    </tr>
+</table>-->
+<input type="text" [(ngModel)]="search">
+<div class="row">
+<div *ngFor="let i of searchbyname()" class="card m-3" style="width: 18rem;">
+    <img [src]="i.image" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{i.name }}</h5>
+      <p class="card-text">{{i.address | uppercase}}</p>
+      <h5 class="card-title">{{i.status }}</h5>
+      <a href="#" class="btn btn-danger" (click)="deleteResidence(i.id)">Delete</a>
+    </div>
+  </div>
+</div>

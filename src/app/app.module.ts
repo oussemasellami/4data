@@ -9,6 +9,18 @@ import{FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ResidenceComponent } from './residence/residence.component'
 import {HttpClientModule} from '@angular/common/http';
 import { FormulaireComponent } from './formulaire/formulaire.component'
+import {RouterModule, Routes} from '@angular/router';
+import { NotfoundComponent } from './notfound/notfound.component'
+
+const rRoot:Routes=[
+  {path:'',redirectTo:"residence",pathMatch:"full"},
+  {path:"home",component:HomeComponent},
+  {path:"residence",component:ResidenceComponent},
+  {path:"formulaire",component:FormulaireComponent},
+  {path:"**",component:HomeComponent}
+
+]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,13 +28,15 @@ import { FormulaireComponent } from './formulaire/formulaire.component'
     HeaderComponent,
     FooterComponent,
     ResidenceComponent,
-    FormulaireComponent
+    FormulaireComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(rRoot)
   ],
   providers: [],
   bootstrap: [AppComponent]

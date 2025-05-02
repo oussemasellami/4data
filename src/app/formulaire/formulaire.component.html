@@ -2,7 +2,7 @@
 <div class="container">
 <form [formGroup]="addform">
 
-    <div class="input-group">
+    <!--<div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text">Id</span>
         </div>
@@ -11,7 +11,7 @@
       </div>
       <div class=" alert alert-danger" *ngIf="addform.get('id')?.invalid && addform.get('id')?.touched">
 id is required
-      </div>
+      </div>-->
 <br>
       <div class="input-group">
         <div class="input-group-prepend">
@@ -20,6 +20,10 @@ id is required
         <input type="text" aria-label="First name" formControlName="name" class="form-control">
       
       </div>
+
+      <div class=" alert alert-danger" *ngIf="addform.get('name')?.invalid && addform.get('name')?.touched">
+    name is required
+              </div>
       <br>
       <div class="input-group">
         <div class="input-group-prepend">
@@ -44,7 +48,11 @@ id is required
         <input type="text" aria-label="First name" formControlName="status" class="form-control">
       
       </div>
+
+      <div class=" alert alert-danger" *ngIf="status?.invalid && status?.touched">
+        status doit etre disponible
+                  </div>
 <br> 
-      <button class="btn btn-primary" (click)="add()">save</button>
+      <button class="btn btn-primary" (click)="add()" [disabled]="addform.invalid">save</button>
 </form>
 </div>

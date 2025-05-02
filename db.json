@@ -8,11 +8,11 @@
       "status": "Disponible"
     },
     {
-      "id": "2",
-      "name": "ali",
-      "address": "13 rue",
-      "image": "hhh",
-      "status": "dispo"
+      "id": "8bac",
+      "name": "Ahmed",
+      "address": "15 rue",
+      "image": "../../assets/images/residence1.jpg",
+      "status": "disponible"
     }
   ]
 }

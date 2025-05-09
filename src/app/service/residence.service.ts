@@ -14,8 +14,8 @@ export class ResidenceService {
     return this.http.get<Residence[]>("http://localhost:3000/residence")
   }
 
-  getResidence(id:any):Observable<Residence[]>{
-    return this.http.get<Residence[]>("http://localhost:3000/residence"+"/"+id)
+  getResidence(id:any):Observable<Residence>{
+    return this.http.get<Residence>("http://localhost:3000/residence"+"/"+id)
   }
 
   deleteResidence(id:any):Observable<Residence[]>{

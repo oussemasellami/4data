@@ -25,6 +25,8 @@
       <p class="card-text">{{i.address | uppercase}}</p>
       <h5 class="card-title">{{i.status }}</h5>
       <a href="#" class="btn btn-danger" (click)="deleteResidence(i.id)">Delete</a>
+      <button class="btn btn-dark" [routerLink]="['/details',i.id]">Details</button>
+      <button class="btn btn-success" [routerLink]="['/update',i.id]">update</button>
     </div>
   </div>
 </div>
